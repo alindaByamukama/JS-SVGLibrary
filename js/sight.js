@@ -1,3 +1,5 @@
+const { appendChild } = require("domutils");
+
 class SVGElement {
     constructor(type) {
       this.type = type;
@@ -7,8 +9,29 @@ class SVGElement {
     }
 
     attr(attrs) {
+        for (const [key, value] of Object.entries(object1)) {
+            node.setAttributeNS(null, this.namespace, this.type);
+        }
         return this;
     }
-    
+
+    append(element) {
+        const parent = (typeof element === "string") ? document.querySelector(element) : element.node;
+        parent.appendChild(this.node);
+        return this;
+    }
+        
   }
+
+  class Sight {
+      constructor(selector, width, height) {
+
+      }
+
+      draw(type, attrs) {
+          return 
+      }
+  }
+
+
   
